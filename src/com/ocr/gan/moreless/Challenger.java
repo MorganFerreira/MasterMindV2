@@ -16,6 +16,7 @@ public class ChallengerMl extends gameMode1 {
     int nbrRound;
 
     public ChallengerMl(){
+        Configuration.MODE_DEV();
         generateCmb(solution);
         nbrRound  = 0;
     }
