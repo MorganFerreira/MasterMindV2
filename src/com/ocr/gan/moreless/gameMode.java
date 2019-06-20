@@ -9,18 +9,18 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public abstract class gameMode1 {
+public abstract class gameMode {
 
     static ArrayList<String> possibleClue = new ArrayList<>(Arrays.asList("+", "-", "="));
 
-    public static void generateCmb(ArrayList<Integer> solution) {
+    public void generateCmb(ArrayList<Integer> solution) {
         Random rnd = new Random();
         for (int k = 0; k < Configuration.getNbrValues() ; ++k) {
             solution.add(rnd.nextInt(Configuration.getNbrChoice()));
         }
     }
 
-    public static void takeCmb(ArrayList<Integer> combination) {
+    public void takeCmb(ArrayList<Integer> combination) {
         Scanner sc = new Scanner(System.in);
         Logger log = Logger.getLogger("");
 
@@ -30,22 +30,23 @@ public abstract class gameMode1 {
         }
     }
 
-    public static void takeClue(ArrayList<String> clue) {
+    public void takeClue(ArrayList<String> clue) {
         Scanner sc = new Scanner(System.in);
         Logger log = Logger.getLogger("");
 
         log.log(Level.INFO, Str.takeClue);
-        for (int k = 0; k < Configuration.getNbrValues(); ++k) {
-            do {
+        do {
+            for (int k = 0; k < Configuration.getNbrValues(); ++k) {
                 String tmp = sc.next();
                 if (possibleClue.contains(tmp)) {
                     clue.add(tmp);
+                    System.out.println("Test");
                 } else {
                     log.log(Level.INFO, Str.incorrectValues);
                     clue.clear();
                     k = -1;
                 }
-            } while (!clue.contains(possibleClue));
-        }
+            }
+        } while (clue.contains(possibleClue));
     }
 }

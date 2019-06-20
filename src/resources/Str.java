@@ -1,14 +1,8 @@
 package resources;
 
 import com.ocr.gan.config.Configuration;
-import com.ocr.gan.moreless.ChallengerMl;
 
 public class Str {
-
-    public static final String runGame =
-            "Veuillez choisir la difficulté du jeux: \n " +
-            "1: mode facile --> indice = +/- \n " +
-            "2: mode difficile --> indice = blanc/noir";
 
     public static final String modeGame =
             "Veuillez choisir le mode de jeux: \n " +
@@ -44,8 +38,10 @@ public class Str {
     public static final String incorrectValues  =
             "Les consignes sont simples, recommence!";
 
-    /*public static final String endOfRound =
-            "Proposition : " + ChallengerMl.play() combination.toString() + " --> Réponse : " + clue.toString();*/
+    public static final String modeDev =
+            "La réponse est ";
 
+    public static final String endOfRound =
+            "Proposition : [%s]";
 }
 

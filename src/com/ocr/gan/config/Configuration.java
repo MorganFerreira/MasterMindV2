@@ -10,7 +10,7 @@ public class Configuration {
 
     public static void readProperties() {
 
-        try (InputStream input = Configuration.class.getClassLoader().getResourceAsStream("resources/config.properties")){
+        try (InputStream input = Configuration.class.getClassLoader().getResourceAsStream("config.properties")){
 
             if (input == null) {
                 System.out.println("Sorry, unable to find config.properties");
@@ -27,4 +27,5 @@ public class Configuration {
     public static int getNbrValues() { return Integer.valueOf(properties.getProperty("NBR_VALUES"));}
     public static int getNbrRoundMax() { return Integer.valueOf(properties.getProperty("NBR_ROUND_MAX"));}
     public static int getNbrChoice() { return Integer.valueOf(properties.getProperty("NBR_CHOICE"));}
+    public static boolean MODE_DEV() {return Boolean.valueOf(properties.getProperty("MODE_DEV"));}
 }

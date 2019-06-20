@@ -8,17 +8,23 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ChallengerMl extends gameMode1 {
+public class Challenger extends gameMode {
 
-    ArrayList<Integer> combination = new ArrayList<>(Configuration.getNbrValues());
-    ArrayList<Integer> solution = new ArrayList<>(Configuration.getNbrValues());
-    ArrayList<String> clue = new ArrayList<>();
-    int nbrRound;
+    ArrayList<Integer> combinationC = new ArrayList<>(Configuration.getNbrValues());
+    ArrayList<Integer> solutionC = new ArrayList<>(Configuration.getNbrValues());
+    ArrayList<String> clueC = new ArrayList<>();
+    int nbrRoundC;
 
-    public ChallengerMl(){
-        Configuration.MODE_DEV();
-        generateCmb(solution);
-        nbrRound  = 0;
+    public Challenger(){
+        Logger log = Logger.getLogger("");
+        if (Configuration.MODE_DEV()) {
+            generateCmb(solutionC);
+            log.log(Level.INFO, Str.modeDev);
+            System.out.println(solutionC.toString());
+        } else {
+            generateCmb(solutionC);
+        }
+        nbrRoundC = 0;
     }
 
     public void play() {
@@ -27,28 +33,27 @@ public class ChallengerMl extends gameMode1 {
 
         log.log(Level.INFO, Str.ruleChallenger);
         do {
-            nbrRound += 1;
-            takeCmb(combination);
+            nbrRoundC += 1;
+            takeCmb(combinationC);
             Utils.isEqual = true;
 
             for (int k = 0; k < Configuration.getNbrValues(); ++k) {
-                if (combination.get(k) > solution.get(k)) {
-                    clue.add(" - ");
+                if (combinationC.get(k) > solutionC.get(k)) {
+                    clueC.add(" - ");
                     Utils.isEqual  =  false;
-                } else if (combination.get(k) < solution.get(k)) {
-                    clue.add(" + ");
+                } else if (combinationC.get(k) < solutionC.get(k)) {
+                    clueC.add(" + ");
                     Utils.isEqual = false;
                 } else {
-                    clue.add(" = ");
+                    clueC.add(" = ");
                 }
             }
-            //TODO Strings ???
-            System.out.println("Proposition : " + combination.toString() + " --> Réponse : " + clue.toString());
+            System.out.println("Proposition : " + combinationC.toString() + " --> Réponse : " + clueC.toString());
 
 
-            combination.clear();
-            clue.clear();
-        } while (!Utils.isEqual && nbrRound < Configuration.getNbrRoundMax());
+            combinationC.clear();
+            clueC.clear();
+        } while (!Utils.isEqual && nbrRoundC < Configuration.getNbrRoundMax());
 
         Utils.end();
     }
