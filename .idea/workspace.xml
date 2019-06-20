@@ -2,33 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd83e9e9-7b5a-47c4-8fed-b40bec5745ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/log4j.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mastermind.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Mastermind.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mastermind/com/ocr/gan/Common/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mastermind/com/ocr/gan/Common/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mastermind/com/ocr/gan/Common/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mastermind/com/ocr/gan/Common/Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mastermind/com/ocr/gan/config/Configuration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mastermind/com/ocr/gan/config/Configuration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mastermind/com/ocr/gan/mastermind/ChallengerMm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mastermind/com/ocr/gan/mastermind/DefenderMm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mastermind/com/ocr/gan/mastermind/DualMm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mastermind/com/ocr/gan/mastermind/gameMode2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mastermind/com/ocr/gan/moreless/ChallengerMl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mastermind/com/ocr/gan/moreless/DefenderMl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mastermind/com/ocr/gan/moreless/DualMl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mastermind/com/ocr/gan/moreless/gameMode1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mastermind/resources/Str.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mastermind/resources/config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ocr/gan/Common/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ocr/gan/Common/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ocr/gan/Common/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ocr/gan/Common/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ocr/gan/config/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ocr/gan/config/Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ocr/gan/config/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ocr/gan/config/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ocr/gan/config/log4j.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ocr/gan/config/Log.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ocr/gan/moreless/Challenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ocr/gan/moreless/Challenger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ocr/gan/moreless/Defender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ocr/gan/moreless/Defender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ocr/gan/moreless/Dual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ocr/gan/moreless/Dual.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ocr/gan/moreless/gameMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ocr/gan/moreless/gameMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Str.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/Str.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -102,14 +82,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="8" />
-          <entry key="java" value="926" />
+          <entry key="java" value="1071" />
           <entry key="properties" value="53" />
           <entry key="xml" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="926" />
+          <entry key="JAVA" value="1071" />
           <entry key="PLAIN_TEXT" value="8" />
           <entry key="Properties" value="53" />
           <entry key="XML" value="19" />
@@ -120,7 +100,8 @@
           <entry key="NOTICE" value="1" />
           <entry key="class" value="2" />
           <entry key="gitignore" value="1" />
-          <entry key="java" value="18" />
+          <entry key="java" value="23" />
+          <entry key="project" value="1" />
           <entry key="properties" value="1" />
           <entry key="xml" value="3" />
         </counts>
@@ -128,7 +109,8 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="18" />
+          <entry key="Eclipse" value="1" />
+          <entry key="JAVA" value="23" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="1" />
           <entry key="XML" value="3" />
@@ -136,15 +118,18 @@
       </usages-collector>
     </session>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="MasterMindV2" />
+  </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.36681223">
+    <splitter split-orientation="horizontal" split-proportion="0.525889">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/moreless/Dual.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="443">
-                  <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+                <state relative-caret-position="341">
+                  <caret line="33" selection-start-line="33" selection-end-line="33" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -173,8 +158,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/Common/Utils.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="493">
-                  <caret line="56" column="56" lean-forward="true" selection-start-line="56" selection-start-column="56" selection-end-line="56" selection-end-column="56" />
+                <state relative-caret-position="-51">
+                  <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -185,7 +170,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/config/Configuration.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
+                <state relative-caret-position="204">
                   <caret line="12" column="91" selection-start-line="12" selection-start-column="91" selection-end-line="12" selection-end-column="91" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -197,7 +182,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/resources/Str.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="748">
+                <state relative-caret-position="460">
                   <caret line="44" column="32" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
                 </state>
               </provider>
@@ -206,8 +191,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/moreless/gameMode.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+                <state relative-caret-position="69">
+                  <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -215,11 +200,23 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/log4j.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="19" column="46" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="46" />
+                <state relative-caret-position="85">
+                  <caret line="5" column="70" lean-forward="true" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/moreless/Challenger.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="918">
+                  <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -227,24 +224,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+        <leaf>
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/moreless/Challenger.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="228">
-                  <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/moreless/Defender.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="296">
-                  <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+                <state relative-caret-position="918">
+                  <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -303,26 +288,25 @@
         <option value="$PROJECT_DIR$/src/com/ocr/gan/moreless/gameMode1.java" />
         <option value="$PROJECT_DIR$/src/com/ocr/gan/moreless/ChallengerMl.java" />
         <option value="$PROJECT_DIR$/src/com/ocr/gan/Common/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/ocr/gan/Common/Utils.java" />
         <option value="$PROJECT_DIR$/src/com/ocr/gan/config/Log.java" />
         <option value="$PROJECT_DIR$/src/com/ocr/gan/config/log4j.xml" />
         <option value="$PROJECT_DIR$/src/resources/config.properties" />
         <option value="$PROJECT_DIR$/src/com/ocr/gan/config/Configuration.java" />
-        <option value="$PROJECT_DIR$/src/com/ocr/gan/moreless/gameMode.java" />
         <option value="$PROJECT_DIR$/src/resources/Str.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/com/ocr/gan/moreless/Defender.java" />
-        <option value="$PROJECT_DIR$/src/com/ocr/gan/moreless/Challenger.java" />
         <option value="$PROJECT_DIR$/src/com/ocr/gan/moreless/Dual.java" />
         <option value="$PROJECT_DIR$/resources/log4j.xml" />
+        <option value="$PROJECT_DIR$/src/com/ocr/gan/Common/Utils.java" />
+        <option value="$PROJECT_DIR$/src/com/ocr/gan/moreless/Defender.java" />
+        <option value="$PROJECT_DIR$/src/com/ocr/gan/moreless/gameMode.java" />
+        <option value="$PROJECT_DIR$/src/com/ocr/gan/moreless/Challenger.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -394,7 +378,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561030233333" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561041037188" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -498,24 +482,23 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14552239" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49924356" visible="true" weight="0.14552239" />
+      <window_info id="Structure" order="1" sideWeight="0.50159746" side_tool="true" weight="0.14552239" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Favorites" order="6" sideWeight="0.50075644" side_tool="true" weight="0.14552239" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.28308025" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.32104123" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.12581345" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.329718" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50053304" side_tool="true" weight="0.329718" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.329718" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3286334" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.28308025" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" weight="0.12581345" />
+      <window_info anchor="bottom" id="Terminal" order="6" weight="0.329718" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053304" side_tool="true" weight="0.32104123" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.329718" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.3286334" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -525,6 +508,7 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.32995737" />
+      <window_info anchor="right" id="Debug" order="9" sideWeight="0.49946696" side_tool="true" weight="0.3944563" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14552239" />
@@ -536,7 +520,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.28308025" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.28308025" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32104123" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -640,13 +624,6 @@
     <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/io/FileInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="88" column="25" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/Properties.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="569">
@@ -686,10 +663,81 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.project">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/config/Log.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="44" lean-forward="true" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/io/FileInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="243" column="23" selection-start-line="243" selection-start-column="23" selection-end-line="243" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/moreless/Defender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/log4j.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="70" lean-forward="true" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/moreless/gameMode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/Str.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="44" column="32" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/config/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="91" selection-start-line="12" selection-start-column="91" selection-end-line="12" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/Common/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -703,34 +751,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/config/Configuration.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/Common/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="91" selection-start-line="12" selection-start-column="91" selection-end-line="12" selection-end-column="91" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/Str.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/moreless/Dual.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="32" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/moreless/gameMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+        <state relative-caret-position="341">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -739,52 +770,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/moreless/Challenger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/Common/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/Common/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="56" column="56" lean-forward="true" selection-start-line="56" selection-start-column="56" selection-end-line="56" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/moreless/Dual.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/log4j.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="46" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ocr/gan/moreless/Defender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        <state relative-caret-position="918">
+          <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

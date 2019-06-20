@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 public abstract class gameMode {
 
     static ArrayList<String> possibleClue = new ArrayList<>(Arrays.asList("+", "-", "="));
+    public static Logger logger = Logger.getLogger(gameMode.class);
 
     public void generateCmb(ArrayList<Integer> solution) {
         Random rnd = new Random();
@@ -22,9 +22,8 @@ public abstract class gameMode {
 
     public void takeCmb(ArrayList<Integer> combination) {
         Scanner sc = new Scanner(System.in);
-        Logger log = Logger.getLogger("");
 
-        log.log(Level.INFO, Str.takeCmb);
+        logger.info(Str.takeCmb);
         for (int k = 0; k < Configuration.getNbrValues(); ++k) {
             combination.add(sc.nextInt());
         }
@@ -32,9 +31,8 @@ public abstract class gameMode {
 
     public void takeClue(ArrayList<String> clue) {
         Scanner sc = new Scanner(System.in);
-        Logger log = Logger.getLogger("");
 
-        log.log(Level.INFO, Str.takeClue);
+        logger.info(Str.takeClue);
         do {
             for (int k = 0; k < Configuration.getNbrValues(); ++k) {
                 String tmp = sc.next();
@@ -42,7 +40,7 @@ public abstract class gameMode {
                     clue.add(tmp);
                     System.out.println("Test");
                 } else {
-                    log.log(Level.INFO, Str.incorrectValues);
+                    logger.info(Str.incorrectValues);
                     clue.clear();
                     k = -1;
                 }

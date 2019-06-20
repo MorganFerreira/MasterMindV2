@@ -20,9 +20,7 @@ public class Defender extends gameMode {
 
         takeCmb(combinationD);
         generateCmb(solutionD);
-        //System.out.println("Proposition : " + solutionD.toString());
         logger.info("Proposition : " + solutionD.toString());
-        //logger.info(Str.endOfRound, solutionD);
         nbrRoundD = 0;
     }
 

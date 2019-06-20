@@ -5,8 +5,7 @@ import com.ocr.gan.Common.Utils;
 import com.ocr.gan.config.Configuration;
 
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 public class Challenger extends gameMode {
 
@@ -14,12 +13,12 @@ public class Challenger extends gameMode {
     ArrayList<Integer> solutionC = new ArrayList<>(Configuration.getNbrValues());
     ArrayList<String> clueC = new ArrayList<>();
     int nbrRoundC;
+    Logger logger = Logger.getLogger(Challenger.class);
 
     public Challenger(){
-        Logger log = Logger.getLogger("");
         if (Configuration.MODE_DEV()) {
             generateCmb(solutionC);
-            log.log(Level.INFO, Str.modeDev);
+            logger.info(Str.modeDev);
             System.out.println(solutionC.toString());
         } else {
             generateCmb(solutionC);
@@ -29,9 +28,7 @@ public class Challenger extends gameMode {
 
     public void play() {
 
-        Logger log = Logger.getLogger("");
-
-        log.log(Level.INFO, Str.ruleChallenger);
+        logger.info(Str.ruleChallenger);
         do {
             nbrRoundC += 1;
             takeCmb(combinationC);
@@ -48,8 +45,7 @@ public class Challenger extends gameMode {
                     clueC.add(" = ");
                 }
             }
-            System.out.println("Proposition : " + combinationC.toString() + " --> Réponse : " + clueC.toString());
-
+            logger.info("Proposition : " + combinationC.toString() + " --> Réponse : " + clueC.toString());
 
             combinationC.clear();
             clueC.clear();

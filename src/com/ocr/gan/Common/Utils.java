@@ -6,27 +6,26 @@ import com.ocr.gan.moreless.Dual;
 import resources.Str;
 
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 
 public class Utils {
 
     public static boolean isEqual = true;
     public static int gameMode = 0;
+    public static Logger logger = Logger.getLogger(Utils.class);
 
     public static void end() {
         int choice;
         Scanner sc = new Scanner(System.in);
-        Logger log = Logger.getLogger("");
 
         if (isEqual) {
-            log.log(Level.INFO, Str.win);
+            logger.info(Str.win);
         } else {
-            log.log(Level.INFO, Str.loose);
+            logger.info(Str.loose);
         }
 
-        log.log(Level.INFO, Str.ruleEndGame);
+        logger.info(Str.ruleEndGame);
         choice = sc.nextInt();
         switch (choice) {
             case 1:gameChoice(false);
@@ -40,10 +39,9 @@ public class Utils {
     public static void gameChoice(boolean restart) {
         Scanner sc = new Scanner(System.in);
         int choice;
-        Logger log = Logger.getLogger("");
 
         if (restart) {
-            log.log(Level.INFO, Str.modeGame);
+            logger.info(Str.modeGame);
             do {
                 choice = sc.nextInt();
                 Utils.gameMode = choice;
