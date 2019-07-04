@@ -1,6 +1,5 @@
 package com.ocr.gan.moreless;
 
-import com.ocr.gan.Common.Utils;
 import com.ocr.gan.config.Configuration;
 import org.apache.log4j.Logger;
 

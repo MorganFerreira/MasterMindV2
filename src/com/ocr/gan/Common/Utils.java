@@ -1,5 +1,6 @@
 package com.ocr.gan.Common;
 
+import com.ocr.gan.IHM.ChallengerIhm;
 import com.ocr.gan.moreless.Challenger;
 import com.ocr.gan.moreless.Defender;
 import com.ocr.gan.moreless.Dual;
@@ -48,8 +49,10 @@ public class Utils {
             } while (Utils.gameMode != 1 && Utils.gameMode != 2 && Utils.gameMode != 3);
             switch (Utils.gameMode) {
                 case 1:
-                    Challenger premierJeu = new Challenger();
-                    premierJeu.play();
+                    //Challenger premierJeu = new Challenger();
+                    //premierJeu.play();
+                    ChallengerIhm first = new ChallengerIhm();
+                    first.Affichage();
                     break;
                 case 2:
                     Defender secondJeu = new Defender();

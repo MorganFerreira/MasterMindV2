@@ -19,7 +19,7 @@ public class Challenger extends gameMode {
         if (Configuration.MODE_DEV()) {
             generateCmb(solutionC);
             logger.info(Str.modeDev);
-            System.out.println(solutionC.toString());
+            logger.info(solutionC.toString());
         } else {
             generateCmb(solutionC);
         }
