@@ -20,12 +20,12 @@ public class ChallengerIhm {
 
     public void Affichage(){
 
-        ArrayList<Integer> propositionSolution = new ArrayList<Integer>();
-        ArrayList<String> clueC = new ArrayList<String>();
+        ArrayList<Integer> propositionSolution = new ArrayList<>();
+        ArrayList<String> clueC = new ArrayList<>();
         Boolean fin = false;
 
         do {
-            System.out.println(Str.takeCmb);
+            logger.info(Str.takeCmb);
             for (int k = 0; k < Configuration.getNbrValues(); ++k) {
                 propositionSolution.add(sc.nextInt());
             }

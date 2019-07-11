@@ -17,8 +17,8 @@ public class Challenger {
     Logger logger = Logger.getLogger(Challenger.class);
 
     public Challenger () {
-        solutionC = new ArrayList<Integer>();
-        clueC = new ArrayList<String>();
+        solutionC = new ArrayList<>();
+        clueC = new ArrayList<>();
         nbrRoundC = 0;
         Random rnd = new Random();
         for (int k = 0; k < Configuration.getNbrValues() ; ++k) {
@@ -28,7 +28,7 @@ public class Challenger {
 
     public ArrayList<String> JouerUnTour (ArrayList<Integer> propositionSolution) {
         nbrRoundC++;
-        System.out.println(solutionC.toString());
+        logger.info(solutionC.toString());
 
         for (int k = 0; k < Configuration.getNbrValues(); ++k) {
             if (propositionSolution.get(k) > solutionC.get(k)) {

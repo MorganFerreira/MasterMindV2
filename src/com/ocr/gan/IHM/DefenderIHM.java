@@ -14,7 +14,7 @@ public class DefenderIHM {
     Scanner sc = new Scanner(System.in);
     Logger logger = Logger.getLogger(DefenderIHM.class);
 
-    public void DefenderIhm() {
+    public DefenderIHM(){
         def = new Defender();
     }
 
@@ -22,35 +22,48 @@ public class DefenderIHM {
     public void Affichage() {
 
         ArrayList<Integer> propositionIA = new ArrayList<Integer>();
-        ArrayList<String> clueH = new ArrayList<String>();
+        ArrayList<String> clueH = new ArrayList<>();
         ArrayList<String> possibleClue = new ArrayList<>(Arrays.asList("+", "-", "="));
         Boolean fin = false;
 
-        do {
-            propositionIA = def.JouerUnTour(clueH);
-            System.out.println(propositionIA.toString());
-
+        if (propositionIA.isEmpty()) {
             do {
+                propositionIA.add(5);
+            } while (propositionIA.size() < Configuration.getNbrValues());
+        }
+
+        do {
+            logger.info(propositionIA.toString());
+            do {
+                logger.info(Str.takeClue);
                 for (int k = 0; k < Configuration.getNbrValues(); ++k) {
                     String tmp = sc.next();
                     if (possibleClue.contains(tmp)) {
-                        clue.add(tmp);
-                        System.out.println("Test");
+                        clueH.add(tmp);
                     } else {
                         logger.info(Str.incorrectValues);
-                        clue.clear();
+                        clueH.clear();
                         k = -1;
                     }
                 }
-            } while (clue.contains(possibleClue));
+            } while (clueH.contains(possibleClue));
 
-            fin = isOver(propositionIA);
-            propositionIA.clear();
+            def.JouerUnTour(clueH, propositionIA);
+
+            fin = isOver(clueH);
             clueH.clear();
         } while (!fin && def.nbrRoundD < Configuration.getNbrRoundMax());
+
     }
 
-    //private Boolean isOver(ArrayList<Integer> proposition) {
+    private Boolean isOver(ArrayList<String> clueH) {
 
-    //}
+        for (int k = 0; k < clueH.size(); ++k) {
+            if (clueH.get(k).equals("+")) {
+                return false;
+            } else if (clueH.get(k).equals("-")) {
+                return false;
+            }
+        } return true;
+    }
 }

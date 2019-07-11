@@ -1,6 +1,7 @@
 package com.ocr.gan.Common;
 
 import com.ocr.gan.IHM.ChallengerIhm;
+import com.ocr.gan.IHM.DefenderIHM;
 import com.ocr.gan.moreless.Challenger;
 import com.ocr.gan.moreless.Defender;
 import com.ocr.gan.moreless.Dual;
@@ -55,8 +56,10 @@ public class Utils {
                     first.Affichage();
                     break;
                 case 2:
-                    Defender secondJeu = new Defender();
-                    secondJeu.play();
+                    //Defender secondJeu = new Defender();
+                    //secondJeu.play();
+                    DefenderIHM second = new DefenderIHM();
+                    second.Affichage();
                     break;
                 case 3:
                     Dual troisiemeJeu = new Dual();
