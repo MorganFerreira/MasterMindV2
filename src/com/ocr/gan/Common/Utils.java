@@ -13,21 +13,21 @@ public class Utils {
 
     Scanner sc = new Scanner(System.in);
     int choice = 0;
-    boolean end;
+    boolean fin;
     Logger logger = Logger.getLogger(Utils.class);
-    ChallengerIhm isOverChal;
+    ChallengerIhm isOverChal = new ChallengerIhm();
     DefenderIHM isOverDef;
 
     public Utils() {
-        isOverChal = new ChallengerIhm();
-        isOverDef = new DefenderIHM();
+        //isOverChal = new ChallengerIhm();
+        //isOverDef = new DefenderIHM();
     }
 
-    public void end() {
+    public void end(boolean fin) {
 
-        end = isOverChal.Affichage();
+        //end = isOverChal.Affichage();
 
-        if (end) {
+        if (fin) {
             logger.info(Str.win);
         } else {
             logger.info(Str.loose);
@@ -55,8 +55,8 @@ public class Utils {
             switch (choice) {
                 case 1:
                     ChallengerIhm first = new ChallengerIhm();
-                    first.Affichage();
-                    end();
+                    fin = first.Affichage();
+                    end(fin);
                     break;
                 case 2:
                     DefenderIHM second = new DefenderIHM();

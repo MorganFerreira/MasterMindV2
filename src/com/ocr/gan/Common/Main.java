@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Configuration.readProperties();
+       Configuration.readProperties();
        boolean end = true;
        Utils startGame = new Utils();
        startGame.gameChoice(end);

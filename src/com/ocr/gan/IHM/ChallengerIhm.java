@@ -1,6 +1,5 @@
 package com.ocr.gan.IHM;
 
-import com.ocr.gan.Common.Utils;
 import com.ocr.gan.config.Configuration;
 import com.ocr.gan.plusoumoins.Challenger;
 import org.apache.log4j.Logger;
@@ -14,11 +13,12 @@ public class ChallengerIhm {
     Scanner sc = new Scanner(System.in);
     Logger logger = Logger.getLogger(ChallengerIhm.class);
 
+
     public ChallengerIhm(){
         chal = new Challenger();
     }
 
-    public Boolean Affichage(){
+    public boolean Affichage(){
 
         ArrayList<Integer> propositionSolution = new ArrayList<>();
         ArrayList<String> clueC = new ArrayList<>();
