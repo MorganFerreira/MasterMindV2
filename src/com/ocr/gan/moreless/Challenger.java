@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
 
 public class Challenger extends gameMode {
 
-    ArrayList<Integer> combinationC = new ArrayList<>(Configuration.getNbrValues());
+    /*ArrayList<Integer> combinationC = new ArrayList<>(Configuration.getNbrValues());
     ArrayList<Integer> solutionC = new ArrayList<>(Configuration.getNbrValues());
     ArrayList<String> clueC = new ArrayList<>();
     int nbrRoundC;
@@ -52,5 +52,5 @@ public class Challenger extends gameMode {
         } while (!Utils.isEqual && nbrRoundC < Configuration.getNbrRoundMax());
 
         Utils.end();
-    }
+    }*/
 }

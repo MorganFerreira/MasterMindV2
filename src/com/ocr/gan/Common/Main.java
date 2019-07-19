@@ -8,8 +8,9 @@ public class Main {
     public static void main(String[] args) {
 
         Configuration.readProperties();
-
-       Utils.gameChoice(true);
+       boolean end = true;
+       Utils startGame = new Utils();
+       startGame.gameChoice(end);
 
 
 

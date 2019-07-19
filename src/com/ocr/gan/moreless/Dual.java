@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Dual extends gameMode {
 
-        ArrayList<Integer> combinationC = new ArrayList<>(Configuration.getNbrValues());
+        /*ArrayList<Integer> combinationC = new ArrayList<>(Configuration.getNbrValues());
         ArrayList<Integer> solutionC = new ArrayList<>(Configuration.getNbrValues());
         ArrayList<String> clueC = new ArrayList<>();
         int nbrRoundC;
@@ -41,5 +41,5 @@ public class Dual extends gameMode {
             challenger.play();
         }
 
-    }
+    }*/
 }

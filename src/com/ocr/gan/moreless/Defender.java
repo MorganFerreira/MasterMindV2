@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class Defender extends gameMode {
 
-    ArrayList<Integer> combinationD = new ArrayList<>(Configuration.getNbrValues());
+    /*ArrayList<Integer> combinationD = new ArrayList<>(Configuration.getNbrValues());
     ArrayList<Integer> solutionD = new ArrayList<>(Configuration.getNbrValues());
     ArrayList<String> clueD = new ArrayList<>();
     int nbrRoundD;
@@ -46,5 +46,5 @@ public class Defender extends gameMode {
         } while (!Utils.isEqual  && nbrRoundD < Configuration.getNbrRoundMax());
 
         Utils.end();
-    }
+    }*/
 }

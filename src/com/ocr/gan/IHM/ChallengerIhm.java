@@ -18,11 +18,11 @@ public class ChallengerIhm {
         chal = new Challenger();
     }
 
-    public void Affichage(){
+    public Boolean Affichage(){
 
         ArrayList<Integer> propositionSolution = new ArrayList<>();
         ArrayList<String> clueC = new ArrayList<>();
-        Boolean fin = false;
+        Boolean fin;
 
         do {
             logger.info(Str.takeCmb);
@@ -35,12 +35,13 @@ public class ChallengerIhm {
             clueC.clear();
             propositionSolution.clear();
         } while (!fin && chal.nbrRoundC < Configuration.getNbrRoundMax());
+        return fin;
     }
 
-    private Boolean isOver(ArrayList<String> clue){
+    public Boolean isOver(ArrayList<String> clue){
 
         if (clue.contains(" + ") || clue.contains(" - ")) {
-            System.out.println("Il vous reste " + (Configuration.getNbrRoundMax() - chal.nbrRoundC) + "tours!");
+            logger.info("Il vous reste " + (Configuration.getNbrRoundMax() - chal.nbrRoundC) + "tours!");
         }
 
         for (int k = 0; k < clue.size(); ++k) {

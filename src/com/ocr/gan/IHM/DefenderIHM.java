@@ -33,7 +33,9 @@ public class DefenderIHM {
         }
 
         do {
+            logger.info(Str.propositionIa);
             logger.info(propositionIA.toString());
+            logger.info("Il reste " + (Configuration.getNbrRoundMax() - def.nbrRoundD) + " tours à l'ordinateur pour trouver votre combinaison!");
             do {
                 logger.info(Str.takeClue);
                 for (int k = 0; k < Configuration.getNbrValues(); ++k) {

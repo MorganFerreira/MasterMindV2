@@ -2,9 +2,7 @@ package com.ocr.gan.Common;
 
 import com.ocr.gan.IHM.ChallengerIhm;
 import com.ocr.gan.IHM.DefenderIHM;
-import com.ocr.gan.moreless.Challenger;
-import com.ocr.gan.moreless.Defender;
-import com.ocr.gan.moreless.Dual;
+import com.ocr.gan.plusoumoins.Dual;
 import resources.Str;
 
 import java.util.Scanner;
@@ -13,15 +11,23 @@ import org.apache.log4j.Logger;
 
 public class Utils {
 
-    public static boolean isEqual = true;
-    public static int gameMode = 0;
-    public static Logger logger = Logger.getLogger(Utils.class);
+    Scanner sc = new Scanner(System.in);
+    int choice = 0;
+    boolean end;
+    Logger logger = Logger.getLogger(Utils.class);
+    ChallengerIhm isOverChal;
+    DefenderIHM isOverDef;
 
-    public static void end() {
-        int choice;
-        Scanner sc = new Scanner(System.in);
+    public Utils() {
+        isOverChal = new ChallengerIhm();
+        isOverDef = new DefenderIHM();
+    }
 
-        if (isEqual) {
+    public void end() {
+
+        end = isOverChal.Affichage();
+
+        if (end) {
             logger.info(Str.win);
         } else {
             logger.info(Str.loose);
@@ -38,47 +44,43 @@ public class Utils {
         }
     }
 
-    public static void gameChoice(boolean restart) {
-        Scanner sc = new Scanner(System.in);
-        int choice;
+    public void gameChoice(boolean end) {
 
-        if (restart) {
+        if (end) {
             logger.info(Str.modeGame);
             do {
                 choice = sc.nextInt();
-                Utils.gameMode = choice;
-            } while (Utils.gameMode != 1 && Utils.gameMode != 2 && Utils.gameMode != 3);
-            switch (Utils.gameMode) {
+            } while (choice != 1 && choice != 2 && choice != 3);
+
+            switch (choice) {
                 case 1:
-                    //Challenger premierJeu = new Challenger();
-                    //premierJeu.play();
                     ChallengerIhm first = new ChallengerIhm();
                     first.Affichage();
+                    end();
                     break;
                 case 2:
-                    //Defender secondJeu = new Defender();
-                    //secondJeu.play();
                     DefenderIHM second = new DefenderIHM();
                     second.Affichage();
                     break;
                 case 3:
-                    Dual troisiemeJeu = new Dual();
-                    troisiemeJeu.play();
+                    Dual ter = new Dual();
+                    ter.JouerUnTour();
                     break;
             }
         } else {
-            switch (Utils.gameMode) {
+
+            switch (choice) {
                 case 1:
-                    Challenger premierJeu = new Challenger();
-                    premierJeu.play();
+                    ChallengerIhm first = new ChallengerIhm();
+                    first.Affichage();
                     break;
                 case 2:
-                    Defender secondJeu = new Defender();
-                    secondJeu.play();
+                    DefenderIHM second = new DefenderIHM();
+                    second.Affichage();
                     break;
                 case 3:
-                    Dual troisiemeJeu = new Dual();
-                    troisiemeJeu.play();
+                    Dual ter = new Dual();
+                    ter.JouerUnTour();
                     break;
             }
         }

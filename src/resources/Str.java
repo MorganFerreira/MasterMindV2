@@ -41,7 +41,7 @@ public class Str {
     public static final String modeDev =
             "La réponse est ";
 
-    public static final String endOfRound =
-            "Proposition : [%s]";
+    public static final String propositionIa =
+            "La proposition de l'ordinateur est: ";
 }
 
