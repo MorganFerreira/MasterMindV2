@@ -72,7 +72,8 @@ public class Utils {
             switch (choice) {
                 case 1:
                     ChallengerIhm first = new ChallengerIhm();
-                    first.Affichage();
+                    fin = first.Affichage();
+                    end(fin);
                     break;
                 case 2:
                     DefenderIHM second = new DefenderIHM();
