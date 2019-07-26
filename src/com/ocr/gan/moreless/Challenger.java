@@ -13,9 +13,9 @@ public class Challenger extends gameMode {
     ArrayList<Integer> solutionC = new ArrayList<>(Configuration.getNbrValues());
     ArrayList<String> clueC = new ArrayList<>();
     int nbrRoundC;
-    Logger logger = Logger.getLogger(Challenger.class);
+    Logger logger = Logger.getLogger(Humain.class);
 
-    public Challenger(){
+    public Humain(){
         if (Configuration.MODE_DEV()) {
             generateCmb(solutionC);
             logger.info(Str.modeDev);

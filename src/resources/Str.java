@@ -6,8 +6,8 @@ public class Str {
 
     public static final String modeGame =
             "Veuillez choisir le mode de jeux: \n " +
-            "1: mode Challenger --> Trouver la réponse en " + Configuration.getNbrRoundMax() + " coups maximum \n " +
-            "2: mode Defender --> Donner les indices à l'ordinateur \n " +
+            "1: mode Humain --> Trouver la réponse en " + Configuration.getNbrRoundMax() + " coups maximum \n " +
+            "2: mode Ordinateur --> Donner les indices à l'ordinateur \n " +
             "3: mode Dual --> Trouver la réponse avant l'ordinateur";
 
     public static final String ruleChallenger =

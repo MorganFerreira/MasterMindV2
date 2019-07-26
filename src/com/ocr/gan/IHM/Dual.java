@@ -1,16 +1,16 @@
-package com.ocr.gan.plusoumoins;
+package com.ocr.gan.IHM;
 
-import com.ocr.gan.IHM.ChallengerIhm;
-import com.ocr.gan.IHM.DefenderIHM;
+import com.ocr.gan.plusoumoins.Humain;
+import com.ocr.gan.plusoumoins.Ordinateur;
 
 import java.util.ArrayList;
 
 public class Dual {
 
-    Challenger chalDual;
-    Defender defDual;
-    ChallengerIhm ihmChalDual;
-    DefenderIHM ihmDefDuall;
+    Humain chalDual;
+    Ordinateur defDual;
+    Challenger ihmChalDual;
+    Defender ihmDefDuall;
 
     // solutionC --> combinaison à deviner
     ArrayList<Integer> solutionC;
@@ -23,10 +23,10 @@ public class Dual {
     ArrayList<String> clueH;
 
     public Dual() {
-        chalDual = new Challenger();
-        defDual = new Defender();
-        ChallengerIhm ihmChalDual = new ChallengerIhm();
-        DefenderIHM ihmDefDuall = new DefenderIHM();
+        chalDual = new Humain();
+        defDual = new Ordinateur();
+        Challenger ihmChalDual = new Challenger();
+        Defender ihmDefDuall = new Defender();
     }
 
     public void JouerUnTour() {

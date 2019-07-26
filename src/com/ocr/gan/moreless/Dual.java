@@ -32,8 +32,8 @@ public class Dual extends gameMode {
 
     public void play() {
 
-        Challenger challenger = new Challenger();
-        Defender defender = new Defender();
+        Humain challenger = new Humain();
+        Ordinateur defender = new Ordinateur();
 
         if (nbrRoundC > nbrRoundD) {
             defender.play();

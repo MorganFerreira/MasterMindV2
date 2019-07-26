@@ -13,9 +13,9 @@ public class Defender extends gameMode {
     ArrayList<Integer> solutionD = new ArrayList<>(Configuration.getNbrValues());
     ArrayList<String> clueD = new ArrayList<>();
     int nbrRoundD;
-    Logger logger = Logger.getLogger(Defender.class);
+    Logger logger = Logger.getLogger(Ordinateur.class);
 
-    public Defender(){
+    public Ordinateur(){
         logger.info(Str.ruleDefender);
 
         takeCmb(combinationD);
