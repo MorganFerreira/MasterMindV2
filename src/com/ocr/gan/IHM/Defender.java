@@ -1,38 +1,52 @@
 package com.ocr.gan.IHM;
 
+import com.ocr.gan.Common.Utils;
 import com.ocr.gan.config.Configuration;
-import com.ocr.gan.plusoumoins.Ordinateur;
-import org.apache.log4j.Logger;
+import com.ocr.gan.joueurs.Humain;
+import com.ocr.gan.joueurs.Ordinateur;
 import resources.Str;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class Defender {
+public class Defender extends Jeu {
+
+    Ordinateur ordinateur;
+    Humain humain;
+    Utils utils;
+    int nbrRound = 1;
 
 
-    Scanner sc = new Scanner(System.in);
-    Logger logger = Logger.getLogger(Defender.class);
-
-
-    public Defender(){}
+    public Defender(){
+        humain = new Humain();
+        ordinateur = new Ordinateur();
+        utils = new Utils();
+    }
 
 
     // Déroulement du defender
-    public void Affichage() {
+    public void startGame() {
+
+        ArrayList<String> clueH;
+        boolean fin;
+
+        ArrayList<Integer> solutionH = humain.initDefSaisieCombi();
+        ArrayList<Integer> propositionIA = ordinateur.initDefGenerationCombi();
+
         do {
-            logger.info(Str.propositionIa);
-            logger.info(propositionIA.toString());
-            def.JouerUnTour(clueH, propositionIA);
-            fin = isOver(clueH);
-            clueH.clear();
-        } while (!fin && def.nbrRoundD < Configuration.getNbrRoundMax());
-    }
+            System.out.println(Str.reminderCmb + solutionH);
+            clueH = humain.defSaisieIndice();
+            propositionIA = ordinateur.defGenerationCombi(propositionIA, clueH);
+            System.out.println(Str.propositionIa + propositionIA);
+            nbrRound = this.tourRestant(clueH, nbrRound);
+            fin = this.isOver(clueH);
+        } while (!fin && Configuration.getNbrRoundMax() == nbrRound);
 
-    // le nbr de tour restant --> a revoir
-    public void tourRestant() {
-
-            logger.info("Il reste " + (Configuration.getNbrRoundMax() - def.nbrRoundD) + " tours à l'ordinateur pour trouver votre combinaison!");
-
+        if (fin) {
+            System.out.println(Str.win);
+            this.end();
+        } else {
+            System.out.println(Str.loose);
+            this.end();
+        }
     }
 }

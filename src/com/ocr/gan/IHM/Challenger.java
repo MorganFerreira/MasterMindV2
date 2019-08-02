@@ -1,40 +1,52 @@
 package com.ocr.gan.IHM;
 
+import com.ocr.gan.Common.Utils;
 import com.ocr.gan.config.Configuration;
-import com.ocr.gan.plusoumoins.Humain;
-import org.apache.log4j.Logger;
+import com.ocr.gan.joueurs.Humain;
+import com.ocr.gan.joueurs.Ordinateur;
+import resources.Str;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class Challenger {
+public class Challenger extends Jeu {
+
+    Ordinateur ordinateur;
+    Humain humain;
+    Utils utils;
+
+    private int nbrRound = 1;
 
 
-    Scanner sc = new Scanner(System.in);
-    Logger logger = Logger.getLogger(Challenger.class);
-
-
-    public Challenger(){}
+    public Challenger(){
+        humain = new Humain();
+        ordinateur = new Ordinateur();
+        utils = new Utils();
+    }
 
 
     // Déroulement du challenger
-    public boolean Affichage(){
+    public void startGame(){
 
-        ArrayList<String> clueC = new ArrayList<>();
+        ArrayList<Integer> propositionSolution;
+        ArrayList<String> clueC;
+        boolean fin;
+
+        ArrayList<Integer> solutionC = ordinateur.initChallGenerationCombi();
+
         do {
-            clueC = chal.JouerUnTour(propositionSolution);
-            System.out.println(clueC.toString());
-            fin = isOver(clueC);
-            clueC.clear();
-            propositionSolution.clear();
-        } while (!fin && chal.nbrRoundC < Configuration.getNbrRoundMax());
-        return fin;
-    }
+            System.out.println(solutionC);
+            propositionSolution = humain.chalSaisieCombi();
+            clueC = ordinateur.challGenerationIndice(propositionSolution, solutionC);
+            nbrRound = this.tourRestant(clueC, nbrRound);
+            fin = this.isOver(clueC);
+        } while (!fin && Configuration.getNbrRoundMax() == nbrRound);
 
-    // fonction donnant le nbr de tour restant si !win --> need indice ia
-    public void tourRestant() {
-        if (clue.contains(" + ") || clue.contains(" - ")) {
-            logger.info("Il vous reste " + (Configuration.getNbrRoundMax() - chal.nbrRoundC) + "tours!");
+        if (fin) {
+            System.out.println(Str.win);
+            this.end();
+        } else {
+            System.out.println(Str.loose);
+            this.end();
         }
     }
 }

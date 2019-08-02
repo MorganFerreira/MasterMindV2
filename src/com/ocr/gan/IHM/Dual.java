@@ -1,38 +1,66 @@
 package com.ocr.gan.IHM;
 
-import com.ocr.gan.plusoumoins.Humain;
-import com.ocr.gan.plusoumoins.Ordinateur;
+import com.ocr.gan.config.Configuration;
+import com.ocr.gan.joueurs.Humain;
+import com.ocr.gan.joueurs.Ordinateur;
+import resources.Str;
 
 import java.util.ArrayList;
 
-public class Dual {
+public class Dual extends Jeu {
 
-    Humain chalDual;
-    Ordinateur defDual;
-    Challenger ihmChalDual;
-    Defender ihmDefDuall;
+    Ordinateur ordinateur;
+    Humain humain;
 
-    // solutionC --> combinaison à deviner
-    ArrayList<Integer> solutionC;
-    // clueC --> indice donné par l'IA
-    ArrayList<String> clueC;
 
-    // solutionH --> combinaison que l'IA doit deviner
-    ArrayList<Integer> solutionH;
-    // clueH --> indice à remplir pour l'IA
-    ArrayList<String> clueH;
-
-    public Dual() {
-        chalDual = new Humain();
-        defDual = new Ordinateur();
-        Challenger ihmChalDual = new Challenger();
-        Defender ihmDefDuall = new Defender();
+    public Dual(){
+        humain = new Humain();
+        ordinateur = new Ordinateur();
     }
 
-    public void JouerUnTour() {
-        ihmChalDual.Affichage();
-        ihmDefDuall.Affichage();
-        //chalDual.JouerUnTour(solutionC);
-        //defDual.JouerUnTour(clueH, solutionH);
+
+    // Déroulement du dual
+    public void startGame(){
+
+        //chall
+        ArrayList<Integer> propositionSolution;
+        ArrayList<String> clueC;
+        // def
+        ArrayList<String> clueH;
+
+        // chall
+        ArrayList<Integer> solutionC = ordinateur.initChallGenerationCombi();
+        // def
+        ArrayList<Integer> solutionH = humain.initDefSaisieCombi();
+        ArrayList<Integer> propositionIA = ordinateur.initDefGenerationCombi();
+
+        boolean finH;
+        boolean finC;
+
+        do {
+
+            // chall
+            System.out.println(solutionC);
+            propositionSolution = humain.chalSaisieCombi();
+            clueC = ordinateur.challGenerationIndice(propositionSolution, solutionC);
+            finH = this.isOver(clueC);
+
+            // def
+            System.out.println(Str.reminderCmb + solutionH);
+            clueH = humain.defSaisieIndice();
+            propositionIA = ordinateur.defGenerationCombi(propositionIA, clueH);
+            System.out.println(Str.propositionIa + propositionIA);
+            finC = this.isOver(clueH);
+
+        } while (!finH && !finC);
+
+        if (finH) {
+            System.out.println(Str.win);
+            this.end();
+        } else {
+            System.out.println(Str.loose);
+            this.end();
+        }
     }
+
 }
