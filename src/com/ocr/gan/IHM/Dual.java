@@ -19,7 +19,9 @@ public class Dual extends Jeu {
     }
 
 
-    // Déroulement du dual
+    /**
+     * Déroulement du dual
+     */
     public void startGame(){
 
         //chall
@@ -31,22 +33,35 @@ public class Dual extends Jeu {
         // chall
         ArrayList<Integer> solutionC = ordinateur.initChallGenerationCombi();
         // def
+        System.out.println(Str.secretCmb);
         ArrayList<Integer> solutionH = humain.initDefSaisieCombi();
+
         ArrayList<Integer> propositionIA = ordinateur.initDefGenerationCombi();
 
         boolean finH;
         boolean finC;
 
+        if (Configuration.MODE_DEV()) {
+            System.out.println(Str.modeDev + solutionC);
+        }
+
         do {
 
             // chall
-            System.out.println(solutionC);
+            System.out.println(Str.takeCmb);
             propositionSolution = humain.chalSaisieCombi();
+
             clueC = ordinateur.challGenerationIndice(propositionSolution, solutionC);
+            if (clueC.contains("+") || clueC.contains("-")) {
+                System.out.println(Str.clueIa + clueC);
+            }
+
             finH = this.isOver(clueC);
 
             // def
             System.out.println(Str.reminderCmb + solutionH);
+
+            System.out.println(Str.takeClue);
             clueH = humain.defSaisieIndice();
             propositionIA = ordinateur.defGenerationCombi(propositionIA, clueH);
             System.out.println(Str.propositionIa + propositionIA);

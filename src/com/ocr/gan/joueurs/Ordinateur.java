@@ -8,10 +8,15 @@ import java.util.ArrayList;
 
 public class Ordinateur {
 
-    public Ordinateur() {}
+    public Ordinateur() {
+    }
 
 
-    // CHALL init --> génération d'une combi à deviner
+    /**
+     * CHALL init: génération de la combinaison à deviner
+     *
+     * @return solutionC --> La combinaison secrète de l'IA
+     */
     public ArrayList<Integer> initChallGenerationCombi() {
 
         ArrayList<Integer> solutionC = new ArrayList<>();
@@ -19,10 +24,17 @@ public class Ordinateur {
 
         for (int k = 0; k < Configuration.getNbrValues(); ++k) {
             solutionC.add(rnd.nextInt(Configuration.getNbrChoice()));
-        } return solutionC;
+        }
+        return solutionC;
     }
 
-    // CHALL génération d'indice --> need combi humain
+    /**
+     * CHALL: génération d'indice de l'IA
+     *
+     * @param propositionSolution --> La proposition du joueur
+     * @param solutionC --> La combinaison secrète de l'IA
+     * @return clueC --> L'indice de l'IA
+     */
     public ArrayList<String> challGenerationIndice(ArrayList<Integer> propositionSolution, ArrayList<Integer> solutionC) {
 
         ArrayList<String> clueC = new ArrayList<>();
@@ -36,13 +48,16 @@ public class Ordinateur {
                 clueC.add("=");
             }
         }
-        System.out.println(Str.clueIa + clueC);
+        //logger.debug(cluec.toString)
         return clueC;
     }
 
 
-
-    // DEF init --> génération de la première combi
+    /**
+     * DEF init: Génération de la première combinaison de l'IA
+     *
+     * @return propositionIA --> La proposition de l'IA
+     */
     public ArrayList<Integer> initDefGenerationCombi() {
 
         ArrayList<Integer> propositionIA = new ArrayList<>();
@@ -55,17 +70,24 @@ public class Ordinateur {
     }
 
 
-    // DEF génération combi --> need indice et combi
-    public ArrayList<Integer> defGenerationCombi(ArrayList<Integer> propositionIA, ArrayList<String> clueH){
+    /**
+     * DEF: génération de la combinaison de l'IA
+     *
+     * @param propositionIA --> La proposition de l'IA
+     * @param clueH --> L'indice du joueur
+     * @return propositionIA --> La proposition de l'IA
+     */
+    public ArrayList<Integer> defGenerationCombi(ArrayList<Integer> propositionIA, ArrayList<String> clueH) {
 
         for (int k = 0; k < Configuration.getNbrValues(); ++k) {
             if (clueH.get(k).contains("+")) {
-                propositionIA.set(k, propositionIA.get(k) + 1);
+                propositionIA.set(k, ((Configuration.getNbrChoice() - propositionIA.get(k)) / 2) + propositionIA.get(k));
             } else if (clueH.get(k).contains("-")) {
-                propositionIA.set(k, propositionIA.get(k) - 1);
+                propositionIA.set(k, (propositionIA.get(k) - (propositionIA.get(k) / 2)));
             } else if (clueH.get(k).contains("=")) {
                 propositionIA.set(k, propositionIA.get(k) + 0);
             }
-        } return propositionIA;
+        }
+        return propositionIA;
     }
 }

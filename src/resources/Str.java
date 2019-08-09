@@ -20,6 +20,9 @@ public class Str {
             ", l'IA à " + Configuration.getNbrRoundMax() + " essaies pour deviner et gagner la partie. \n" +
             "A chaque propositions ne se résolvant pas par sa victoire, vous devez lui donner un indice sous forme de +, -, =.";
 
+    public static final String modeDev =
+            "Vous êtes en mode développeur. La combinaison secrète à deviner est: ";
+
     public static final String takeClue =
             "Veuillez entrer " + Configuration.getNbrValues() + " indices, sous forme de +, -, =, séparés d'un espace.";
 
@@ -37,9 +40,6 @@ public class Str {
 
     public static final String incorrectValues  =
             "Les consignes sont simples, recommence!";
-
-    public static final String modeDev =
-            "La réponse est: ";
 
     public static final String propositionIa =
             "La proposition de l'IA est: ";

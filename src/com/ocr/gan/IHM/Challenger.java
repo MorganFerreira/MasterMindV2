@@ -1,6 +1,5 @@
 package com.ocr.gan.IHM;
 
-import com.ocr.gan.Common.Utils;
 import com.ocr.gan.config.Configuration;
 import com.ocr.gan.joueurs.Humain;
 import com.ocr.gan.joueurs.Ordinateur;
@@ -12,7 +11,6 @@ public class Challenger extends Jeu {
 
     Ordinateur ordinateur;
     Humain humain;
-    Utils utils;
 
     private int nbrRound = 1;
 
@@ -20,12 +18,13 @@ public class Challenger extends Jeu {
     public Challenger(){
         humain = new Humain();
         ordinateur = new Ordinateur();
-        utils = new Utils();
     }
 
 
-    // Déroulement du challenger
-    public void startGame(){
+    /**
+     * Déroulement du challenger
+     */
+    public void startGame() {
 
         ArrayList<Integer> propositionSolution;
         ArrayList<String> clueC;
@@ -33,13 +32,22 @@ public class Challenger extends Jeu {
 
         ArrayList<Integer> solutionC = ordinateur.initChallGenerationCombi();
 
+        if (Configuration.MODE_DEV()) {
+            System.out.println(Str.modeDev + solutionC);
+        }
+
         do {
-            System.out.println(solutionC);
+            System.out.println(Str.takeCmb);
             propositionSolution = humain.chalSaisieCombi();
+
             clueC = ordinateur.challGenerationIndice(propositionSolution, solutionC);
+            if (clueC.contains("+") || clueC.contains("-")) {
+                System.out.println(Str.clueIa + clueC);
+            }
+
             nbrRound = this.tourRestant(clueC, nbrRound);
             fin = this.isOver(clueC);
-        } while (!fin && Configuration.getNbrRoundMax() == nbrRound);
+        } while (!fin && Configuration.getNbrRoundMax() != nbrRound);
 
         if (fin) {
             System.out.println(Str.win);

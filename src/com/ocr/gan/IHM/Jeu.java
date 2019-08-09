@@ -9,16 +9,15 @@ import java.util.Scanner;
 public abstract class Jeu {
 
     public static Scanner sc = new Scanner(System.in);
-    public static int choice; // = 0;
+    public static int choice;
 
-    /* fonction retournant un boolean pour verif la win --> need indice
-
-    @param clue --> indice d'un jeu
-    @return --> renvoie un Boolean déterminant la fin de partie
-
-     */
+    /**
+     * Fonction verifiant la condition de victoire en cas de combinaison secrète trouvée
+     *
+     * @param clue --> L'indice d'un des jeux
+     * @return Le Boolean déterminant la condition de victoire
+     **/
     public Boolean isOver(ArrayList<String> clue) {
-
 
         for (int k = 0; k < clue.size(); ++k) {
             if (clue.get(k).equals("+")) {
@@ -26,9 +25,13 @@ public abstract class Jeu {
             } else if (clue.get(k).equals("-")) {
                 return false;
             }
-        } return true;
+        }
+        return true;
     }
 
+    /**
+     * Fonction demandant au joueur ce qu'il veux faire en fin de partie
+     */
     public void end() {
 
         int askEnd;
@@ -51,6 +54,11 @@ public abstract class Jeu {
         }
     }
 
+    /**
+     * Fonction demandant au joueur quel type de jeux il veux lancer
+     *
+     * @return choice --> Le choix du mode de jeu du joueur
+     */
     public static Integer gameChoice() {
 
         System.out.println(Str.modeGame);
@@ -75,7 +83,13 @@ public abstract class Jeu {
         return choice;
     }
 
+    /**
+     * Fonction ayant pour unique but la relance du même jeu
+     *
+     * @param choice --> Le choix du mode de jeu du joueur
+     */
     private void restartSameGame(int choice) {
+
         switch (choice) {
             case 1:
                 Challenger first = new Challenger();
@@ -92,11 +106,17 @@ public abstract class Jeu {
         }
     }
 
-    // fonction donnant le nbr de tour restant si !win --> need indice ia
+    /**
+     * Fonction donnant le nombre de tour restant
+     *
+     * @return nbrRound --> Le nombre de tours de la partie
+     */
     public Integer tourRestant(ArrayList<String> clueC, int nbrRound) {
+
         ++nbrRound;
         if (clueC.contains("+") || clueC.contains("-")) {
-            System.out.println("Il vous reste " + (Configuration.getNbrRoundMax() - (nbrRound - 1)) + "tours!");
-        } return nbrRound;
+            System.out.println("Il reste " + (Configuration.getNbrRoundMax() - (nbrRound - 1)) + "tours!");
+        }
+        return nbrRound;
     }
 }
