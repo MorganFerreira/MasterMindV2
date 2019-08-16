@@ -3,8 +3,6 @@ package com.ocr.gan.IHM;
 import com.ocr.gan.config.Configuration;
 import com.ocr.gan.joueurs.Humain;
 import com.ocr.gan.joueurs.Ordinateur;
-import resources.Str;
-
 import java.util.ArrayList;
 
 public class Dual extends Jeu {
@@ -18,25 +16,24 @@ public class Dual extends Jeu {
         ordinateur = new Ordinateur();
     }
 
-
-    /**
-     * Déroulement du dual
-     */
     public void startGame(){
 
+        System.out.println(Str.ruleDual);
         //chall
-        ArrayList<Integer> propositionSolution;
+        ArrayList<Integer> propositionSolution = new ArrayList<>();
         ArrayList<String> clueC;
         // def
-        ArrayList<String> clueH;
+        ArrayList<String> clueH = new ArrayList<>();
+        ArrayList<Integer> firstProposal = new ArrayList<>();
 
         // chall
-        ArrayList<Integer> solutionC = ordinateur.initChallGenerationCombi();
+        ArrayList<Integer> solutionC = ordinateur.initSecretCombi();
         // def
         System.out.println(Str.secretCmb);
-        ArrayList<Integer> solutionH = humain.initDefSaisieCombi();
+        ArrayList<Integer> solutionH = humain.initSecretCombi();
 
-        ArrayList<Integer> propositionIA = ordinateur.initDefGenerationCombi();
+        ArrayList<Integer> propositionIA = ordinateur.generationCombi(firstProposal, clueH);
+        System.out.println(Str.firstPropositionIa + propositionIA);
 
         boolean finH;
         boolean finC;
@@ -49,9 +46,9 @@ public class Dual extends Jeu {
 
             // chall
             System.out.println(Str.takeCmb);
-            propositionSolution = humain.chalSaisieCombi();
+            propositionSolution = humain.generationCombi(propositionSolution, null);
 
-            clueC = ordinateur.challGenerationIndice(propositionSolution, solutionC);
+            clueC = ordinateur.generationClue(propositionSolution, solutionC);
             if (clueC.contains("+") || clueC.contains("-")) {
                 System.out.println(Str.clueIa + clueC);
             }
@@ -62,8 +59,8 @@ public class Dual extends Jeu {
             System.out.println(Str.reminderCmb + solutionH);
 
             System.out.println(Str.takeClue);
-            clueH = humain.defSaisieIndice();
-            propositionIA = ordinateur.defGenerationCombi(propositionIA, clueH);
+            clueH = humain.generationClue(null, null);
+            propositionIA = ordinateur.generationCombi(propositionIA, clueH);
             System.out.println(Str.propositionIa + propositionIA);
             finC = this.isOver(clueH);
 

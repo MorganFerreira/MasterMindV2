@@ -1,77 +1,63 @@
 package com.ocr.gan.joueurs;
 
 import com.ocr.gan.config.Configuration;
-
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Scanner;
+import com.ocr.gan.IHM.Str;
+import org.apache.log4j.Logger;
 
-import resources.Str;
-
-public class Humain {
+public class Humain implements Player {
 
     Scanner sc = new Scanner(System.in);
+    Logger logger = Logger.getLogger(Humain.class);
 
     public Humain() {
     }
 
+    @Override
+    public ArrayList<Integer> initSecretCombi() {
 
-    /**
-     * CHALL: saisie d'une combinaison
-     *
-     * @return propositionSolution --> La proposition du joueur
-     **/
-    public ArrayList<Integer> chalSaisieCombi() {
+        ArrayList<Integer> secretSolution = new ArrayList<>();
 
-        ArrayList<Integer> propositionSolution = new ArrayList<>();
+        for (int k = 0; k < Configuration.getNbrValues(); ++k) {
+            secretSolution.add(sc.nextInt());
+        }
+        logger.debug("initSecretCombi - FIN - retour: " + secretSolution);
+        return secretSolution;
+    }
 
+    @Override
+    public ArrayList<Integer> generationCombi(ArrayList<Integer> propositionSolution, ArrayList<String> clue) {
+
+        propositionSolution.clear();
         for (int k = 0; k < Configuration.getNbrValues(); ++k) {
             propositionSolution.add(sc.nextInt());
         }
+        logger.debug("generationCombi - FIN - retour: " + propositionSolution);
         return propositionSolution;
-
     }
 
-
-    /**
-     * DEF init: saisie de la combinaison à deviner
-     *
-     * @return solutionH --> La combinaison secrète du joueur
-     **/
-    public ArrayList<Integer> initDefSaisieCombi() {
-
-        ArrayList<Integer> solutionH = new ArrayList<>();
-
-        for (int k = 0; k < Configuration.getNbrValues(); ++k) {
-            solutionH.add(sc.nextInt());
-        }
-        return solutionH;
-    }
-
-
-    /**
-     * DEF: saisie de l'indice avec obligation d'une saisie cohérente
-     *
-     * @return clueH --> L'indice du joueur
-     */
-    public ArrayList<String> defSaisieIndice() {
+    @Override
+    public ArrayList<String> generationClue(ArrayList<Integer> propositionSolution, ArrayList<Integer> secretSolution) {
 
         ArrayList<String> possibleClue = new ArrayList<>(Arrays.asList("+", "-", "="));
-        ArrayList<String> clueH = new ArrayList<>();
+        ArrayList<String> clue = new ArrayList<>();
 
         do {
             for (int k = 0; k < Configuration.getNbrValues(); ++k) {
                 String tmp = sc.next();
                 if (possibleClue.contains(tmp)) {
-                    clueH.add(tmp);
+                    clue.add(tmp);
                 } else {
                     System.out.println(Str.incorrectValues);
-                    clueH.clear();
+                    clue.clear();
                     k = -1;
                 }
             }
-        } while (clueH.contains(possibleClue));
-        return clueH;
+        } while (clue.contains(possibleClue));
+        logger.debug("generationClue - FIN - retour: " + clue);
+        return clue;
     }
 }
 

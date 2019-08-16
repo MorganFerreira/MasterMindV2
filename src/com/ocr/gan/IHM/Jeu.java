@@ -1,8 +1,6 @@
 package com.ocr.gan.IHM;
 
 import com.ocr.gan.config.Configuration;
-import resources.Str;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,9 +10,9 @@ public abstract class Jeu {
     public static int choice;
 
     /**
-     * Fonction verifiant la condition de victoire en cas de combinaison secrète trouvée
+     * Fonction verifiant une condition de victoire
      *
-     * @param clue --> L'indice d'un des jeux
+     * @param clue --> L'indice
      * @return Le Boolean déterminant la condition de victoire
      **/
     public Boolean isOver(ArrayList<String> clue) {
@@ -34,14 +32,9 @@ public abstract class Jeu {
      */
     public void end() {
 
-        int askEnd;
         System.out.println(Str.ruleEndGame);
 
-        do {
-            askEnd = sc.nextInt();
-        } while (askEnd != 1 && askEnd != 2 && askEnd != 3);
-
-        switch (askEnd) {
+        switch (sc.nextInt()) {
             case 1:
                 restartSameGame(choice);
                 break;
@@ -51,6 +44,9 @@ public abstract class Jeu {
             case 3:
                 System.exit(1);
                 break;
+                default:
+                    System.out.println(Str.incorrectValues);
+                    end();
         }
     }
 
@@ -115,7 +111,7 @@ public abstract class Jeu {
 
         ++nbrRound;
         if (clueC.contains("+") || clueC.contains("-")) {
-            System.out.println("Il reste " + (Configuration.getNbrRoundMax() - (nbrRound - 1)) + "tours!");
+            System.out.println("Il reste " + (Configuration.getNbrRoundMax() - nbrRound) + "tours!");
         }
         return nbrRound;
     }

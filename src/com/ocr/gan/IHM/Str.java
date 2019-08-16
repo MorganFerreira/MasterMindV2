@@ -1,4 +1,4 @@
-package resources;
+package com.ocr.gan.IHM;
 
 import com.ocr.gan.config.Configuration;
 
@@ -19,6 +19,11 @@ public class Str {
             "Vous choisissez " + Configuration.getNbrValues() + " chiffre(s) entre 0 et " + (Configuration.getNbrChoice() - 1) +
             ", l'IA à " + Configuration.getNbrRoundMax() + " essaies pour deviner et gagner la partie. \n" +
             "A chaque propositions ne se résolvant pas par sa victoire, vous devez lui donner un indice sous forme de +, -, =.";
+
+    public static final String ruleDual =
+            "L'IA choisit " + Configuration.getNbrValues() + " chiffre(s) entre 0 et " + (Configuration.getNbrChoice() - 1) +
+            ", ensuite vous choisissez " + Configuration.getNbrValues() + " chiffre(s) entre 0 et " + (Configuration.getNbrChoice() - 1) +
+            ". Le premier à deviner la combinaison secrête de l'autre, gagne la partie!";
 
     public static final String modeDev =
             "Vous êtes en mode développeur. La combinaison secrète à deviner est: ";
