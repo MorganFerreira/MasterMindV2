@@ -7,12 +7,12 @@ import java.util.Scanner;
 import com.ocr.gan.IHM.Str;
 import org.apache.log4j.Logger;
 
-public class Humain implements Player {
+public class Human implements Player {
 
     Scanner sc = new Scanner(System.in);
-    Logger logger = Logger.getLogger(Humain.class);
+    Logger logger = Logger.getLogger(Human.class);
 
-    public Humain() {
+    public Human() {
     }
 
     @Override

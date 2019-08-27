@@ -1,20 +1,19 @@
 package com.ocr.gan.IHM;
 
 import com.ocr.gan.config.Configuration;
-import com.ocr.gan.joueurs.Humain;
-import com.ocr.gan.joueurs.Ordinateur;
+import com.ocr.gan.joueurs.Human;
+import com.ocr.gan.joueurs.Computer;
 import java.util.ArrayList;
 
-public class Defender extends Jeu {
+public class Defender extends Game {
 
-    Ordinateur ordinateur;
-    Humain humain;
-    int nbrRound = 0;
-
+    Computer computer;
+    Human human;
+    private int nbrRound = 0;
 
     public Defender(){
-        humain = new Humain();
-        ordinateur = new Ordinateur();
+        human = new Human();
+        computer = new Computer();
     }
 
     public void startGame() {
@@ -23,22 +22,18 @@ public class Defender extends Jeu {
         ArrayList<String> clueH = new ArrayList<>();
         ArrayList<Integer> firstProposal = new ArrayList<>();
         boolean fin;
-
         System.out.println(Str.secretCmb);
-        ArrayList<Integer> solutionH = humain.initSecretCombi();
-
-        ArrayList<Integer> propositionIA = ordinateur.generationCombi(firstProposal, clueH);
+        ArrayList<Integer> solutionH = human.initSecretCombi();
+        ArrayList<Integer> propositionIA = computer.generationCombi(firstProposal, clueH);
         System.out.println(Str.firstPropositionIa + propositionIA);
 
         do {
             System.out.println(Str.reminderCmb + solutionH);
-
             System.out.println(Str.takeClue);
-            clueH = humain.generationClue(null, null);
-
-            propositionIA = ordinateur.generationCombi(propositionIA, clueH);
+            clueH = human.generationClue(null, null);
+            propositionIA = computer.generationCombi(propositionIA, clueH);
             System.out.println(Str.propositionIa + propositionIA);
-            nbrRound = this.tourRestant(clueH, nbrRound);
+            nbrRound = this.roundLeft(clueH, nbrRound);
             fin = this.isOver(clueH);
         } while (!fin && Configuration.getNbrRoundMax() > nbrRound);
 

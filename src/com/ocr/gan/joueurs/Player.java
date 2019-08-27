@@ -1,4 +1,5 @@
 package com.ocr.gan.joueurs;
+
 import java.util.ArrayList;
 
 public interface Player {

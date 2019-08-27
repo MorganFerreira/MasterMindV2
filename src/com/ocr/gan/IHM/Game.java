@@ -1,13 +1,15 @@
 package com.ocr.gan.IHM;
 
 import com.ocr.gan.config.Configuration;
+import org.apache.log4j.Logger;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public abstract class Jeu {
+public abstract class Game {
 
     public static Scanner sc = new Scanner(System.in);
     public static int choice;
+    Logger logger = Logger.getLogger(Game.class);
 
     /**
      * Fonction verifiant une condition de victoire
@@ -17,6 +19,7 @@ public abstract class Jeu {
      **/
     public Boolean isOver(ArrayList<String> clue) {
 
+        logger.debug("isOver - START - arguments: " + clue);
         for (int k = 0; k < clue.size(); ++k) {
             if (clue.get(k).equals("+")) {
                 return false;
@@ -44,9 +47,9 @@ public abstract class Jeu {
             case 3:
                 System.exit(1);
                 break;
-                default:
-                    System.out.println(Str.incorrectValues);
-                    end();
+            default:
+                System.out.println(Str.incorrectValues);
+                end();
         }
     }
 
@@ -107,12 +110,14 @@ public abstract class Jeu {
      *
      * @return nbrRound --> Le nombre de tours de la partie
      */
-    public Integer tourRestant(ArrayList<String> clueC, int nbrRound) {
+    public Integer roundLeft(ArrayList<String> clueC, int nbrRound) {
 
+        logger.debug("roundLeft - START - arguments: " + clueC + ", " + nbrRound);
         ++nbrRound;
         if (clueC.contains("+") || clueC.contains("-")) {
             System.out.println("Il reste " + (Configuration.getNbrRoundMax() - nbrRound) + "tours!");
         }
+        logger.debug("roundLeft - FIN - retour: " + nbrRound);
         return nbrRound;
     }
 }

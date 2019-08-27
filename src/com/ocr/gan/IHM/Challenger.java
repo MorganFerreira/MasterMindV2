@@ -1,21 +1,20 @@
 package com.ocr.gan.IHM;
 
 import com.ocr.gan.config.Configuration;
-import com.ocr.gan.joueurs.Humain;
-import com.ocr.gan.joueurs.Ordinateur;
+import com.ocr.gan.joueurs.Human;
+import com.ocr.gan.joueurs.Computer;
 import java.util.ArrayList;
 
-public class Challenger extends Jeu {
+public class Challenger extends Game {
 
-    Ordinateur ordinateur;
-    Humain humain;
-
+    Computer computer;
+    Human human;
     private int nbrRound = 0;
 
 
     public Challenger(){
-        humain = new Humain();
-        ordinateur = new Ordinateur();
+        human = new Human();
+        computer = new Computer();
     }
 
     public void startGame() {
@@ -24,8 +23,7 @@ public class Challenger extends Jeu {
         ArrayList<Integer> propositionSolution = new ArrayList<>();
         ArrayList<String> clueC;
         boolean fin;
-
-        ArrayList<Integer> solutionC = ordinateur.initSecretCombi();
+        ArrayList<Integer> solutionC = computer.initSecretCombi();
 
         if (Configuration.MODE_DEV()) {
             System.out.println(Str.modeDev + solutionC);
@@ -33,14 +31,12 @@ public class Challenger extends Jeu {
 
         do {
             System.out.println(Str.takeCmb);
-            propositionSolution = humain.generationCombi(propositionSolution,null);
-
-            clueC = ordinateur.generationClue(propositionSolution, solutionC);
+            propositionSolution = human.generationCombi(propositionSolution,null);
+            clueC = computer.generationClue(propositionSolution, solutionC);
             if (clueC.contains("+") || clueC.contains("-")) {
                 System.out.println(Str.clueIa + clueC);
             }
-
-            nbrRound = this.tourRestant(clueC, nbrRound);
+            nbrRound = this.roundLeft(clueC, nbrRound);
             fin = this.isOver(clueC);
         } while (!fin && Configuration.getNbrRoundMax() > nbrRound);
 

@@ -34,14 +34,17 @@ public class Str {
     public static final String takeCmb =
             "Veuillez entrer " + Configuration.getNbrValues() + " chiffres, séparés d'un espace. Ces chiffres doivent être comprit entre 0 et " + (Configuration.getNbrChoice() - 1);
 
+    public static final String takeCmbDual =
+            "C'est à votre tour de jouer! Veuillez entrer " + Configuration.getNbrValues() + " chiffres, séparés d'un espace. Ces chiffres doivent être comprit entre 0 et " + (Configuration.getNbrChoice() - 1);
+
     public static final String ruleEndGame =
             "Vous avez terminé votre partie. Vous pouvez recommencer le même jeu en tapant 1, choisir un autre jeu en tapant 2 ou fermer le jeu en tapant 3!";
 
     public static final String win =
-            "GG, its a win!";
+            "GG, vous avez gagné!";
 
     public static final String loose =
-            "Too bad, u loose!";
+            "Dommage, vous avez perdue!";
 
     public static final String incorrectValues  =
             "Les consignes sont simples, recommence!";

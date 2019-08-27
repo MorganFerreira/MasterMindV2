@@ -2,15 +2,14 @@ package com.ocr.gan.joueurs;
 
 import com.ocr.gan.config.Configuration;
 import org.apache.log4j.Logger;
-
 import java.util.Random;
 import java.util.ArrayList;
 
-public class Ordinateur implements Player {
+public class Computer implements Player {
 
-    Logger logger = Logger.getLogger(Ordinateur.class);
+    Logger logger = Logger.getLogger(Computer.class);
 
-    public Ordinateur() {
+    public Computer() {
     }
 
     @Override
@@ -34,9 +33,13 @@ public class Ordinateur implements Player {
             if (clue.isEmpty()) {
                 propositionSolution.add(k, (Configuration.getNbrChoice()/2));
             } else if (clue.get(k).contains("-")) {
-                propositionSolution.set(k, Math.round(propositionSolution.get(k) - (propositionSolution.get(k) / 2)));
+                if (propositionSolution.get(k) == 1) {
+                    propositionSolution.set(k, 0);
+                } else {
+                    propositionSolution.set(k, (propositionSolution.get(k) - Math.round(propositionSolution.get(k) / 2)));
+                }
             } else if (clue.get(k).contains("+")) {
-                    propositionSolution.set(k, Math.round((Configuration.getNbrChoice() - propositionSolution.get(k)) / 2) + propositionSolution.get(k));
+                propositionSolution.set(k, (Math.floorDiv((Configuration.getNbrChoice() - propositionSolution.get(k)),2) + propositionSolution.get(k)));
             } else if (clue.get(k).contains("=")) {
                 propositionSolution.set(k, propositionSolution.get(k) + 0);
             }

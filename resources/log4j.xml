@@ -1,5 +1,5 @@
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
-<log4j:configuration debug="true">
+<log4j:configuration>
 
     <appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
         <param name="File" value="ApplicationLog.log"/>
