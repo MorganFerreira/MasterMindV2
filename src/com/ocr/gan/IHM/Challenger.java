@@ -45,6 +45,7 @@ public class Challenger extends Game {
             this.end();
         } else {
             System.out.println(Str.loose);
+            System.out.println(Str.solutionWhenLoose + solutionC);
             this.end();
         }
     }
