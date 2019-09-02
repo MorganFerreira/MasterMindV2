@@ -63,5 +63,8 @@ public class Str {
 
     public static final String reminderCmb =
             "Votre combinaison secrète est: ";
+
+    public static final String solutionWhenLoose =
+            "La solution était: ";
 }
 

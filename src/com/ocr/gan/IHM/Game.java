@@ -3,6 +3,7 @@ package com.ocr.gan.IHM;
 import com.ocr.gan.config.Configuration;
 import org.apache.log4j.Logger;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public abstract class Game {
@@ -37,19 +38,25 @@ public abstract class Game {
 
         System.out.println(Str.ruleEndGame);
 
-        switch (sc.nextInt()) {
-            case 1:
-                restartSameGame(choice);
-                break;
-            case 2:
-                gameChoice();
-                break;
-            case 3:
-                System.exit(1);
-                break;
-            default:
-                System.out.println(Str.incorrectValues);
-                end();
+        try {
+            switch (sc.nextInt()) {
+                case 1:
+                    restartSameGame(choice);
+                    break;
+                case 2:
+                    gameChoice();
+                    break;
+                case 3:
+                    System.exit(1);
+                    break;
+                default:
+                    System.out.println(Str.incorrectValues);
+                    end();
+            }
+        } catch (InputMismatchException e) {
+            System.out.println(Str.incorrectValues);
+            sc.next();
+            end();
         }
     }
 
@@ -62,8 +69,14 @@ public abstract class Game {
 
         System.out.println(Str.modeGame);
         do {
-            choice = sc.nextInt();
-        } while (choice != 1 && choice != 2 && choice != 3);
+            try {
+                choice = sc.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println(Str.incorrectValues);
+                sc.next();
+                gameChoice();
+            }
+        } while (choice != 1 && choice != 2 && choice !=3);
 
         switch (choice) {
             case 1:
